@@ -7,7 +7,11 @@ Vision Transformers process images as sequences of patches. By analyzing the sel
 * Extract Attention: Registers forward hooks to capture attention weights during inference.
 * Visualize: Overlays attention heatmaps onto original X-ray images.
 * Evaluate: Measures localization performance using Intersection over Union (IoU) against ground truth masks.
-* ## 2. Technical Methodology
+## 2. Technical Methodology
+
+![Diagram]([https://example.com/image.png](https://lh3.googleusercontent.com/gg-dl/ABS2GSmLFfZ_EAST1dfr190BWzxwIs3i7J_ZlENsIDMnFS8sVojwMLFcl8IIH0eFrwOOLjO1KVUZbszzki32tCRYZ3IuJj22pZcoa4Xh5uZV_xvgiF6gjxZJxFssegwcgDCCi3iEj7s1hrGFJTqjHApxRLQEAvTfexfdqusuvm3KZvZCEWWq7Q=s1600))
+
+
 ### The ViTExplainer Class
 The core logic resides in the ViTExplainer class. Unlike CNNs which use Class Activation Maps (CAM), this implementation directly accesses the multi-head self-attention mechanism.
 * Preprocessing: Images are resized and normalized (default ImageNet stats) to match the model's expected input (e.g., 224x224).
