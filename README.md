@@ -28,16 +28,25 @@ To quantify how well the attention map locates the pathology, the notebook calcu
 ### Prerequisites
 
 * Ensure you have the following libraries installed (as seen in Cell 1):
-* ```python
-! pip install torch timm numpy pandas pillow matplotlib
+```python
+!pip install torch timm numpy pandas pillow matplotlib
 
 CFG = {
-    "dataset.type": "chexlocalize", 
+    "dataset.type": "chexlocalize",
     "paths.images": Path("../data/images"),
     # ...
-    "model.name": "vit_base_patch16_224" 
+    "model.name": "vit_base_patch16_224"
 }
-
 ```
+### Running the Benchmark
+Execute the run_benchmark() function. It will process images up to run.max_images, calculate IoU scores, and save visualization overlays to ../results/attn_overlays.
+
+```python
+# Run benchmark and get results dataframe
+df = run_benchmark()
+print(df.head())
+```
+## Sample Results
+The notebook generates overlay images where red/jet areas indicate high model attention. These visualizations verify if the model is focusing on the lungs/pathology rather than artifacts or background tags.
 
 
