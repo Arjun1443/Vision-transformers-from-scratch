@@ -53,4 +53,6 @@ print(df.head())
 ## Sample Results
 The notebook generates overlay images where red/jet areas indicate high model attention. These visualizations verify if the model is focusing on the lungs/pathology rather than artifacts or background tags.
 
+![VIT Image](https://github.com/Arjun1443/Vision-transformers-from-scratch/blob/main/Results.png)
+
 
