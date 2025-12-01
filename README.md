@@ -13,4 +13,31 @@ The core logic resides in the ViTExplainer class. Unlike CNNs which use Class Ac
 * Preprocessing: Images are resized and normalized (default ImageNet stats) to match the model's expected input (e.g., 224x224).
 * Attention Hook: We register a hook on the attention modules to intercept the query-key product
 * Map Generation: The code extracts the attention weights of the [CLS] token with respect to all other patch tokens from the last block. This $1 \times N_{patches}$ vector is reshaped into a 2D grid (e.g., 14x14) and bicubicly upsampled to the original image size to form a smooth heatmap.
-* 
+  
+## Data Handling
+The notebook supports multiple dataset formats, configured via the CFG dictionary:
+* CheXlocalize: Handles hierarchical folder structures and JSON-encoded RLE masks.
+* CSV Bounding Boxes: Reads standard bounding box annotations.
+* Mask Directories: Loads binary segmentation masks directly.
+
+## Evaluation Metrics
+To quantify how well the attention map locates the pathology, the notebook calculates Intersection over Union (IoU) at specific thresholds (0.3, 0.5, 0.7).
+* Heatmap Thresholding: The continuous attention map is binarized. Pixels with attention values above threshold $\tau$ are set to 1, others to 0.
+* Metric Calculation: The code computes this overlap between the binarized attention map and the Ground Truth (GT) pathology mask.
+## Getting Started
+### Prerequisites
+
+* Ensure you have the following libraries installed (as seen in Cell 1):
+* ```python
+! pip install torch timm numpy pandas pillow matplotlib
+
+CFG = {
+    "dataset.type": "chexlocalize", 
+    "paths.images": Path("../data/images"),
+    # ...
+    "model.name": "vit_base_patch16_224" 
+}
+
+```
+
+
