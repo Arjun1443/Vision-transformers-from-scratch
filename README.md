@@ -9,7 +9,7 @@ Vision Transformers process images as sequences of patches. By analyzing the sel
 * Evaluate: Measures localization performance using Intersection over Union (IoU) against ground truth masks.
 ## 2. Technical Methodology
 
-![VIT Image](images/architecture.png)
+![VIT Image](https://github.com/Arjun1443/Vision-transformers-from-scratch/blob/main/VIT%20DataFlow.png)
 
 
 ### The ViTExplainer Class
