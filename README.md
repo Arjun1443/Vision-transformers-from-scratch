@@ -1,5 +1,8 @@
 # Vision Transformer Attention Visualization
 
+[**Launch Vision Transformer Lens →**](https://vision-transformers-from-scratch.streamlit.app/) · [Deployment guide](DEPLOYMENT.md)
+
+
 ## Interactive Streamlit app
 
 A companion application is available in [streamlit_app/app.py](streamlit_app/app.py).
@@ -11,7 +14,7 @@ python -m streamlit run streamlit_app/app.py
 
 The first overlay downloads a pretrained ViT. Live model loading/attention inference was not tested locally and may exceed a small host memory budget.
 
-See [DEPLOYMENT.md](DEPLOYMENT.md) for Community Cloud setup, validation coverage, and runtime requirements. A live deployment is not yet confirmed.
+See [DEPLOYMENT.md](DEPLOYMENT.md) for Community Cloud setup, validation coverage, and runtime requirements. Deployment URL: https://vision-transformers-from-scratch.streamlit.app/
 
 
 A notebook exploring attention-map visualization and localization evaluation for chest X-ray images using a pretrained Vision Transformer.
